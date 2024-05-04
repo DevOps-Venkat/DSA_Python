@@ -1,78 +1,115 @@
 class Problem:
     @staticmethod
-    def leapYear(years):
-        for year in years:
-            if (year % 400 ==0) and (year % 100 ==0):
-                print(f"{year} its Leap Year")
-            elif (year % 4 == 0) and (year % 100 != 0):
-                print(f"{year} its Leap Year")
-            else : 
-                print(f"{year} its Not Leap Year")
+    def oddOrEven():
+        num = int(input("Enter your input as Digit:"))
+        if num % 2 == 0:
+            print(f"{num} is a Even Number")
+        else:
+            print(f"{num} is a Odd Number")
     @staticmethod
-    def SumOfTwo(num1,num2):
-        print(num1+num2)
+    def printName():
+        name = input("Enter your name:")
+        print(f"Hi {name}, Welcome to DSA Learning!!!")
     @staticmethod
-    def multiplicationTable():
-        divisible = int(input("Enter the number to Divisible:"))
-        for i in range(1,41):
-            print(f"{i} x {divisible} = {i*divisible}")
+    def simpleInterest():
+        p = int(input("Please enter the Principal Value:"))
+        t = int(input("Please enter the Time as Year:"))
+        r = int(input("Please enter the Rate (%):"))
+        si = p * (1 + ((r/100) * t))
+        print(f"Total Amount {si} INR, and Interest {si - p} INR");
     @staticmethod
-    def findLCMHCF():
-        a,b = input("Enter the a,b input:").split()
+    def simpleCalculator():
+        a,b = input("Enter the two numbers with spaces:").split()
+        operator = input("Enter the Operator (+, -, *, /):")
         a = int(a)
         b = int(b)
-        if a>b:
-            x = int(a)
-        else: 
-            x = int(b)
-        hcf = 0
-        lcm = 0
-        for i in range(1,x):
-            if a%i ==0 & b%i== 0:
-                hcf = i
-        print("Limit Start and End:",x,(a*b))
-        for j in range(x, a*b):
-             print(j,a,b)
-             if j%a ==0 & j%b== 0:
-                lcm = j
-                break
-        print(f"HCM : {hcf}, LCM : {lcm}")
+        result = 0
+        if operator == "+":
+            result = a+b
+        elif operator == "-":
+            result = a-b
+        elif operator == "*":
+            result = a*b
+        elif operator == "/":
+            result = a/b
+        else :
+            print("Please enter correct inputs")
+        print(f"Result of Value are: {result}")
     @staticmethod
-    def sumOfAll():
+    def largestTwoNumbers():
+        a  = int(input("Enter the A Number:"))
+        b  = int(input("Enter the B Number:"))
+        if a == b:
+            print("A and B are equals")
+        elif a> b:
+            print("A is Largest Number than B")
+        else:
+            print("B is Largest Number than A")
+    @staticmethod
+    def INR_To_USD():
+        USD = 	0.0119826 
+        INR = float(input("Please enter Rupees Currency Amount:"))
+        print(f" USD value is : {round(INR * USD,2)}$")
+    @staticmethod
+    def fibonnicSeries():
         sum = 0
-        print("Enter the your Value:")
-        while True:
-            data = input()
-            if (data == 'x'):
-                print(f"Sum of all value are: {sum}")
-                break
-            else:
-                sum = sum + int(data)
+        n1 = 0
+        n2 = 1
+        n = int(input("Enter the Series Value:"))
+        print(n1)
+        print(n2)
+        for element in range(n-2):
+            n3 = n1 + n2
+            n1 = n2
+            n2 = n3
+            print(n3)
     @staticmethod
-    def compute_gcd(x, y):
-        while(y):
-            x, y = y, x % y
-        return x
+    def palindromeString():
+        data = input("Enter the string :")
+        if data == data[::-1]:
+            print("Palindrome String")
+        else :
+            print("Not Palindrome String") 
     @staticmethod
-    def compute_lcm(x, y):
-        lcm = (x*y) #compute_gcd(x,y)
-        return lcm
+    def armstrongNumber():
+        data = input("Enter the value:")
+        sum = 0
+        for element in data:
+            sum = sum + pow(int(element),3)
+        if(str(sum) == data):
+            print("Armstrong Number")
+        else :
+            print("Not Armstrong Number")
 
+            
+        
+#OBJECT CREATION FLOW:
 obj = Problem()
 
-# 1. Input a year and find whether it is a leap year or not.
-# year = [1997,1996,1600,1800]
-# obj.leapYear(year)
+#1. Write a program to print whether a number is even or odd, also take input from the user.
+# obj.oddOrEven()
 
-# 2. Take two numbers and print the sum of both.
-# obj.SumOfTwo(1.3233,2.23)
+#2. Take name as input and print a greeting message for that particular name.
+# obj.printName()
 
-# 3. Take a number as input and print the multiplication table for it.
-# obj.multiplicationTable()
+#3. Write a program to input principal, time, and rate (P, T, R) from the user and find Simple Interest.
+# FORMULA: Simple_Interest = Principl_Amount * (1 + ( (Rate/100) * Years))
+# obj.simpleInterest()  
 
-# 4. Take 2 numbers as inputs and find their HCF and LCM.
-# obj.findLCMHCF()
-# print("The L.C.M. is", compute_lcm(num1, num2))
+#4. Take in two numbers and an operator (+, -, *, /) and calculate the value. (Use if conditions)
+# obj.simpleCalculator()  
 
-# 5. Keep taking numbers as inputs till the user enters ‘x’, after that print sum of all.
-# obj.sumOfAll()
+#5. Take 2 numbers as input and print the largest number.
+# obj.largestTwoNumbers()
+
+# 6. Input currency in rupees and output in USD.
+# obj.INR_To_USD()
+
+# 7. To calculate Fibonacci Series up to n numbers.
+# obj.fibonnicSeries()
+
+# 8. To find out whether the given String is Palindrome or not.
+# obj.palindromeString()
+
+# 9. To find Armstrong Number between two given number.
+# obj.armstrongNumber()
