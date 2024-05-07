@@ -1,5 +1,5 @@
 import inquirer
-
+import math
 class Problem:
     def __init__(self):
           pass
@@ -57,22 +57,42 @@ class Problem:
     def findAreaOfShape(self,shape):
         match shape:
             case "Circle":
-                r = int(input("Please enter circle radius"))
-                area = 0
+                r = int(input("Radius of Circle:"))
+                area = math.pi * math.pow(r,2)
+                print(f"Area of Circle: {round(area,2)}")
             case "Triangle":
-                area = 0
+                b = int(input("Enter Triangle Base :"))
+                h = int(input("Enter Triangle Height :"))
+                area = (1/2)*(b*h)
+                print(f"Area of Triangle: {round(area,2)}")
             case "Square":
-                area = 0
+                a = int(input("Enter Square of Area :"))
+                area = math.pow(a,2)
+                print(f"Area of Square: {round(area,2)}")
             case "Rectangle":
-                area = 0
+                l = int(input("Enter Rectangle Length :"))
+                w = int(input("Enter Rectangle width :"))
+                area = l * w
+                print(f"Area of Rectangle: {round(area,2)}")
             case "Isosceles Triangle":
-                 area = 0
+                b = int(input("Enter Triangle Base :"))
+                h = int(input("Enter Triangle Height :"))
+                area = (1/2)*(b*h)
+                print(f"Area of Isosceles Triangle: {round(area,2)}")
             case "Parallelogram":
-                area = 0
+                b = int(input("Enter Parallelogram Base :"))
+                h = int(input("Enter Parallelogram Height :"))
+                area = (b*h)
+                print(f"Area of Parallelogram: {round(area,2)}")
             case "Rhombus":
-                area = 0
+                d1 = int(input("Enter Rhombus D1 :"))
+                d2 = int(input("Enter Rhombus D2 :"))
+                area = (d1*d2)/2
+                print(f"Area of Rhombus: {round(area,2)}")
             case "Equilateral Triangle":
-                area = 0
+                a = int(input("Enter Equilateral Triangle of Area :"))
+                area =  (math.sqrt(3)/4) * math.pow(a,2)
+                print(f"Area of Equilateral Triangle: {round(area,2)}")
     def findPerimeterOfShape(self,shape):
         match shape:
             case "Circle":
