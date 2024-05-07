@@ -96,35 +96,84 @@ class Problem:
     def findPerimeterOfShape(self,shape):
         match shape:
             case "Circle":
-                 area = 0
+                #Formula : 2PiR
+                r = int(input("Radius of Circle:"))
+                area = 2 * math.pi * r
+                print(f"Perimeter of Circle: {round(area,2)}")
             case "Triangle":
-                area = 0
+                #Formula : a + b + c
+                a = int(input("Enter the A Side:"))
+                b = int(input("Enter the B Side:"))
+                c = int(input("Enter the C Side:"))
+                area = a + b + c
+                print(f"Perimeter of Triangle: {round(area,2)}")
             case "Square":
-                area = 0
+                #Formula : 4a
+                a = int(input("Enter the A Side:"))
+                area = 4*a
+                print(f"Perimeter of Square: {round(area,2)}")
             case "Rectangle":
-                area = 0
+                #Formula : 2(a+b)
+                a = int(input("Enter the A Side:"))
+                b = int(input("Enter the B Side:"))
+                area = 2*(a+b)
+                print(f"Perimeter of Rectangle: {round(area,2)}")
             case "Parallelogram":
-                area = 0
+                #Formula : 2(a+b)
+                a = int(input("Enter the A Side:"))
+                b = int(input("Enter the B Side:"))
+                area = 2*(a+b)
+                print(f"Perimeter of Parallelogram: {round(area,2)}")
             case "Rhombus":
-                area = 0
+                #Formula : 4a
+                a = int(input("Enter the A Side:"))
+                area = 4*a
+                print(f"Perimeter of Rhombus: {round(area,2)}")
     def findVolumeOfShape(self,shape):
         match shape:
             case "Cone":
-                 area = 0
+                #Formula : 	V=1/3hπr²
+                r = int(input("Radius:"))
+                h = int(input("Height:"))
+                area = (1/3)*h*math.pi*(math.pow(r,2))
+                print(f"Volume of Cone: {round(area,2)}")
             case "Prism":
-                area = 0
+                #Formula : (V) = B × h
+                b = int(input("Base:"))
+                h = int(input("Height:"))
+                area = b * h
+                print(f"Volume of Prism: {round(area,2)}")
             case "Cylinder":
-                area = 0
+                #Formula : V=πr2h
+                r = int(input("Radius:"))
+                h = int(input("Height:"))
+                area = math.pi * r * 2 * h
+                print(f"Volume of Cylinder: {round(area,2)}")
             case "Sphere":
-                area = 0
+                #Formula : V = 4/3 π r³
+                r = int(input("Radius:"))
+                area = (4/3) * math.pi * math.pow(r,3)
+                print(f"Volume of Sphere: {round(area,2)}")
             case "Pyramid":
-                 area = 0
+                #Formula : V=lwh/3
+                l = int(input("Base length:"))
+                w = int(input("Base width:"))
+                h = int(input("Pyramid height:"))
+                area = (l * w * h)/3
+                print(f"Volume of Pyramid: {round(area,2)}")
     def findSurfaceOfShape(self,shape):
         match shape:
             case "Cylinder":
-                area = 0
+                # Formula : A=2πrh+2πr2
+                r = int(input("Radius:"))
+                h = int(input("Height:"))
+                area = 2 * math.pi * r * h + (2 * math.pi * math.pow(r,2))
+                print(f"Surface of Cylinder: {round(area,2)}")
             case "Cube":
-                area = 0
+                #Formula: A=6a2
+                a = int(input("Edge:"))
+                area = 6 * math.pow(a,2)
+                print(f"Surface of Cube: {round(area,2)}")
         
         
 obj = Problem()
