@@ -40,12 +40,12 @@ all.
 7. Power In Python
 8. Calculate Depreciation of Value
 9. Calculate Batting Average
-10. Calculate CGPA Python Program
-11. Compound Interest Python Program
+<!-- 10. Calculate CGPA Python Program
+11. Compound Interest Python Program -->
 12. Calculate Average Marks
 13. Sum Of N Numbers
 14. Armstrong Number In Python
-15. Find Ncr & Npr
+<!-- 15. Find Ncr & Npr -->
 16. Reverse A String In Python
 17. Find if a number is palindrome or not 
 18. Future Investment Value

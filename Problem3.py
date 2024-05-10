@@ -42,9 +42,69 @@ class Problem3:
         d = 0
         d = math.sqrt(math.pow((x2-x1),2)+math.pow((y2-y1),2))
         print(f"Distance between two points: {d}")
+    def calculate_commission_percentage(self):
+        # Formula: commission amount = sale price × commission percentage / 100
+        buy_price = float(input("Enter the Buy Price:"))
+        sale_price = float(input("Enter the Sale Price:"))
+        comm_percent = ((sale_price - buy_price ) / buy_price) * 100
+        print(f"Commission Percentage: {round(comm_percent,2)}%, Commission Amount: { (sale_price - buy_price )}")
+    def power(self):
+        data = int(input("Enter the value:"))
+        power = int(input("Enter the power:"))
+        print(math.pow(data,power))
+    def depreciation_value(self):
+        asset = float(input("Enter the Asset Value:"))
+        salvage  = float(input("Enter the Salvage Value:"))
+        year = float(input("Enter year of Assets:"))
+        print(f"Straight Line Balance : Depreciation Value: { (asset - salvage)/year}")
+    def batting_avg(self):
+        data = input("Enter the All score by space:").split(" ")
+        sum = 0 
+        for score in data:
+            sum =sum + float(score)
+        print(f"Average Batting is : {sum/(len(data))}")
+    def average_mark(self):
+        data = input("Enter the All marks by space:").split(" ")
+        sum = 0 
+        for score in data:
+            sum =sum + float(score)
+        print(f"Average Mark is : {round(sum/(len(data)),2)}")
+    def sum_of_number(self):
+        sum =0
+        value = input("Enter the all value with space:").split(" ")
+        for element in value:
+            sum = sum + int(element)
+        print(f"Sum of Number: {sum}")
+    def armstrong_number(self):
+        sum = 0
+        data = input("Enter the value:")
+        for element in data:
+            sum = sum + math.pow(int(element), 3)
+        if(sum == float(data)):
+            print("Armstrong Number")
+        else:
+            print("Not Armstrong Number")
+    def reverse_string(self):
+        my_str = input("Enter the String:")
+        print(my_str[::-1])
+    def palindrome_number(self):
+        data = input("Enter the value:")
+        if data == data[::-1]:
+            print("Palindrome Number")
+        else :
+            print("Not Palindrome Number")
 obj = Problem3()
 # obj.factorial_of_number()
 # obj.eb_calculator()
 # obj.average_n_number()
 # obj.discount_of_product()
 # obj.distance_bt_two_point()
+# obj.calculate_commission_percentage()
+# obj.power()
+# obj.depreciation_value()
+# obj.batting_avg()
+# obj.average_mark()
+# obj.sum_of_number()
+# obj.armstrong_number()
+# obj.reverse_string()
+obj.palindrome_number()
