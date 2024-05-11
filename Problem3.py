@@ -104,7 +104,56 @@ class Problem3:
         T  = float(input("Year of Inverstment:"))
         FV = I * (1 + (R+T))
         print(f"Future Investement Value: {FV}")
-
+    def hcf_lcm(self):
+        num1 = int(input("Enter the Number One:"))
+        num2 = int(input("Enter the Number Two:"))
+        if num1> num2:
+            x = num1
+        else:
+            x = num2
+        hcf =0
+        lcm =0
+        for i in range(1,x):
+         if num1%i==0 and num2%i==0:
+          hcf = i
+        while(True):
+            if((x % num1 == 0) and (x % num2 == 0)):
+                lcm = x
+                break
+            x += 1
+        print(f"HCF {hcf}, LCM {lcm}")
+    def vowel_consonant(self):
+        data = input("Enter the value:")
+        vowels = ['a','e','i','o','u','A','E','I','O','U']
+        for element in data:
+            if element in vowels:
+                print(f"{element} is Vowel")
+            else :
+                print(f"{element} is Consonant")
+    def perfect_number(self):
+        num = int(input("Enter the number:"))
+        sum = 0
+        for i in range(1,num):
+            if num % i == 0:
+                sum = sum + i
+        if sum == num :
+            print("Perfect Number")
+        else :
+            print("Not Perfect Number")
+    def sum_of_digit(self):
+        data = input("Enter the value:")
+        sum =0
+        for element in data:
+            sum = sum + int(element)
+        print(f"Sum of Digit: {sum}")
+    def leapyear(self):
+        year = int(input("Enter the year:"))
+        if year % 400 == 0 and year % 100 == 0 :
+            print("Leap year")
+        elif year % 4 == 0  and year % 100 != 0:
+            print("Leap year")
+        else :
+            print("Not a Leap year")
 
 obj = Problem3()
 # obj.factorial_of_number()
@@ -121,4 +170,9 @@ obj = Problem3()
 # obj.armstrong_number()
 # obj.reverse_string()
 # obj.palindrome_number()
-obj.futureInvestementValue()
+# obj.futureInvestementValue()
+# obj.hcf_lcm()
+# obj.vowel_consonant()
+# obj.perfect_number()
+# obj.sum_of_digit()
+obj.leapyear()
