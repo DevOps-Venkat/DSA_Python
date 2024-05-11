@@ -93,6 +93,19 @@ class Problem3:
             print("Palindrome Number")
         else :
             print("Not Palindrome Number")
+    def futureInvestementValue(self):  
+        # FV=I×(1+(R×T))
+        # where:
+        # I=Investment amount
+        # R=Interest rate
+        # T=Number of years
+        I = float(input("Enter the Present Value:"))
+        R  = float(input("Interest Rate:"))
+        T  = float(input("Year of Inverstment:"))
+        FV = I * (1 + (R+T))
+        print(f"Future Investement Value: {FV}")
+
+
 obj = Problem3()
 # obj.factorial_of_number()
 # obj.eb_calculator()
@@ -107,4 +120,5 @@ obj = Problem3()
 # obj.sum_of_number()
 # obj.armstrong_number()
 # obj.reverse_string()
-obj.palindrome_number()
+# obj.palindrome_number()
+obj.futureInvestementValue()
