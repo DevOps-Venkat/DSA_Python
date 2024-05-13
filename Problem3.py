@@ -1,13 +1,15 @@
 import math
+import datetime
+import calendar
 class Problem3:
     def __init__(self) -> None:
         pass
-    def factorial_of_number(self):
-        fact = int(input("Enter the Factorial number:"))
+    def factorial_of_number(self,fact):
+        # fact = int(input("Enter the Factorial number:"))
         sum = 1
         for i in range(1,fact+1):
             sum = sum * i
-        print(f"Factorial: {sum}")
+        return sum
     def eb_calculator(self):
         units = int(input("Enter your EB Unit:"))
         cost = 0
@@ -154,7 +156,61 @@ class Problem3:
             print("Leap year")
         else :
             print("Not a Leap year")
-
+    def sum_of_even_neg_odd_from_all(self):
+        print("Please enter the Value:\n")
+        neg_sum = 0
+        pos_sum_odd = 0
+        pos_sum_even = 0
+        while(True): 
+            data = int(input())
+            if data == 0:
+                break
+            else:
+                if data < 0: 
+                 neg_sum += data
+                elif data%2 == 0:
+                 pos_sum_even +=data
+                else:
+                 pos_sum_odd+=data
+        print(f"Sum of Negative Number: {neg_sum}")
+        print(f"Sum of Even  Number: {pos_sum_even}")
+        print(f"Sum of Odd Number: {pos_sum_odd}")
+    def findEvenDaysCount(self):
+        y = 2024
+        m = 8
+        print(calendar.month(y, m))
+        for day in range(1,32):
+            if day%2 ==0:
+                print(day)
+    def find_ncr_npr(self):
+        n = 0
+        r = 0
+        n = int(input("Enter the Total number of books: "))
+        r = int(input("Enter the No.of books is selected:"))
+        fact_n = self.factorial_of_number(n)
+        fact_r = self.factorial_of_number(r)
+        fact_n_r = self.factorial_of_number(n-r)
+        result = fact_n/(fact_n_r * fact_r)
+        p_result = fact_n/fact_n_r
+        print(f"NCR : {result} , NPR : {p_result}")
+    def componend_interest(self):
+        p = float(input("Enter the Principal Value:"))
+        r = float(input("Enter the Interest Rate:"))
+        n = float(input("No of times interest is compounded per year:"))
+        t = float(input("Enter the year:"))
+        A = p * math.pow(1+(r/100),t)
+        print(f"Componend Interest: {A}")
+    def cgpa_calculator(self):
+        English = 9.1  
+        Hindi = 8.5  
+        Maths = 9.5  
+        Science =9.6;  
+        SocialStudy = 8.6  
+        CGPA = (9.1+8.5+9.5+9.6+8.6)/(5.0)  
+        CGPAper = 9.5 * (CGPA)  
+        print(f"CGPA : {CGPA}")
+        print(f"CGPA percentage is: {CGPAper}");  
+        
 obj = Problem3()
 # obj.factorial_of_number()
 # obj.eb_calculator()
@@ -175,4 +231,9 @@ obj = Problem3()
 # obj.vowel_consonant()
 # obj.perfect_number()
 # obj.sum_of_digit()
-obj.leapyear()
+# obj.leapyear()
+# obj.sum_of_even_neg_odd_from_all()
+# obj.findEvenDaysCount()
+# obj.find_ncr_npr()
+# obj.componend_interest()
+# obj.cgpa_calculator()
