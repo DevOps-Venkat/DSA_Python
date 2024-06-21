@@ -11,6 +11,16 @@ class Problem:
         result = self.sumTriangle(res)
         print(a)
         return result
+    def Optimizied_sumTriangle(self,a):
+        if len(a)==0:
+            return []
+        res=[]
+        for i in range(len(a)-1):
+            j= i+1
+            res.append(a[i]+a[j])
+        self.Optimizied_sumTriangle(res)
+        print(a)
+    
 
 obj = Problem()
-obj.sumTriangle([1, 2, 3, 4, 5])
+obj.Optimizied_sumTriangle([1, 2, 3, 4, 5])
